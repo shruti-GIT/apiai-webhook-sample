@@ -2,8 +2,8 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-
-
+const apiai = require('apiai');
+const app = apiai("000bf9a133bf45088c470fae2ae9639c");
 const restService = express();
 restService.use(bodyParser.json());
 
@@ -22,7 +22,7 @@ restService.post('/hook', function (req, res) {
 
                 if (requestBody.result.fulfillment) {
                     speech += requestBody.result.fulfillment.speech;
-                    speech += ' ';
+                    speech += ' god';
                 }
 
                 if (requestBody.result.action) {
